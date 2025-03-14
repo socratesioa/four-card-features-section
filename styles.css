@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html,
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fafafa;
+    color: var(--grey-500);
+}
+
+h1,
+h2 {
+    text-align: center;
+    line-height: 140%;
+    letter-spacing: 0.25px;
+    font-size: 36px;
+}
+
+h1 {
+    font-weight: 200;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 135%;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 140%;
+    text-align: center;
+}
+
+.wrapper {
+    margin-top: 100px;
+    padding: 0 2rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "left center-top right"
+    "left center-bottom right";
+    gap: 32px;
+    max-width: 1114px;
+    width: 100%;
+    margin: 75px auto;
+}
+
+.card:nth-child(1) {
+    grid-area: left;
+    align-self: center;
+}
+
+.card:nth-child(2) {
+    grid-area: center-top;
+}
+
+.card:nth-child(3) {
+    grid-area: center-bottom;
+}
+
+.card:nth-child(4) {
+    grid-area: right;
+    align-self: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    width: 100%;
+    padding: 32px;
+    border-radius: 4px;
+    background-color: var(--white);
+    box-shadow: 0 15px 30px -11px hsla(216, 50%, 67%, 0.5);
+}
+
+.card-text {
+    font-size: 13px;
+    line-height: 160%;
+    color: var(--grey-400);
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.cyan {
+    border-top: 4px solid var(--cyan);
+}
+
+.red {
+    border-top: 4px solid var(--red);
+}
+
+.orange {
+    border-top: 4px solid var(--orange);
+}
+
+.blue {
+    border-top: 4px solid var(--blue);
+}
+
+.icon {
+    align-self: flex-end;
+}
+
+footer {
+    padding: 1rem 0;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+@media (max-width: 820px) {
+    .card-container {
+        max-width: 660px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    h1,
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        letter-spacing: 0.01px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 314px;
+    }
+}
